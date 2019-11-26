@@ -52,7 +52,7 @@ class LiquidCheckState extends State<LiquidCheckPage>
                   child: LiquidButton(
                     key: globalKey,
                     progress: _controller.value,
-                    size: Size(200.0, 200.0),
+                    size: Size(250.0, 250.0),
                     onDownLoadStart: () {
                       _controller.reset();
                       _controller.forward();
@@ -60,8 +60,8 @@ class LiquidCheckState extends State<LiquidCheckPage>
                   ),
                 ),
                 Container(
-                  width: 40.0,
-                  height: 10.0,
+                  width: 50.0,
+                  height: 40.0,
                   child: Text('${(_controller.value * 100).round()} %'),
                 )
               ],

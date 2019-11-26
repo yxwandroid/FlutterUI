@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui/animations/stagger_animation.dart';
+import 'package:flutter_ui/animations/widget/stagger_animation.dart';
 
 class TransfromPage extends StatefulWidget {
   @override
