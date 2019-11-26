@@ -15,6 +15,8 @@ import 'package:flutter_ui/tipmenu/tip_menu_page.dart';
 import 'package:oktoast/oktoast.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
+import 'animations/animations_page.dart';
+
 void main() {
   debugPaintSizeEnabled = false;
   runApp(new MyApp());
@@ -44,6 +46,7 @@ class MyApp extends StatelessWidget {
             const Locale('en', 'US'),
           ],
           routes: {
+            UIRoute.animations_basics: (_) => AnimationsPage(),
             UIRoute.slideDrawer: (_) => SlideDrawerPage(),
 //        UIRoute.sharedElement: (_) => SharedElementPage(),
             UIRoute.sharedElement: (_) => ShopPage(),
@@ -178,6 +181,12 @@ class _MenuData {
 }
 
 final List<_MenuData> menus = [
+
+  const _MenuData(
+    title: '动画基础',
+    icon: Icons.audiotrack,
+    routeName: UIRoute.animations_basics,
+  ),
   const _MenuData(
     title: '仿QQ侧滑菜单',
     icon: Icons.audiotrack,

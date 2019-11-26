@@ -116,12 +116,8 @@ class CircleFloatingState extends State<CircleFloatingMenu>
   Offset _getOffset(int index) {
     if (widget.subMenus.length == 0) return Offset(0.0, 0.0);
     if (widget.subMenus.length == 1)
-      return Offset(cos(widget.startAngle) * translateLength,
-          sin(widget.startAngle) * translateLength);
-    double curAngle = (widget.endAngle - widget.startAngle) /
-            (widget.subMenus.length - 1) *
-            index +
-        widget.startAngle;
+      return Offset(cos(widget.startAngle) * translateLength, sin(widget.startAngle) * translateLength);
+    double curAngle = (widget.endAngle - widget.startAngle) / (widget.subMenus.length - 1) * index + widget.startAngle;
     return Offset(
         cos(curAngle) * translateLength, sin(curAngle) * translateLength);
   }

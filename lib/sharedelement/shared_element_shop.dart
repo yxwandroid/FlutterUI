@@ -13,6 +13,9 @@ final List<_CategoryItem> categories = [
   _CategoryItem(category: 'Pasta', tag: 'pasta', asset: 'images/food01.jpeg'),
   _CategoryItem(category: 'Fruits', tag: 'fruits', asset: 'images/food02.jpeg'),
   _CategoryItem(category: 'Sweets', tag: 'sweets', asset: 'images/food03.jpeg'),
+  _CategoryItem(category: 'Sweets', tag: 'sweets', asset: 'images/food03.jpeg'),
+  _CategoryItem(category: 'Sweets', tag: 'sweets', asset: 'images/food03.jpeg'),
+  _CategoryItem(category: 'Sweets', tag: 'sweets', asset: 'images/food03.jpeg'),
   _CategoryItem(
       category: 'Seafood', tag: 'seafood', asset: 'images/food04.jpeg'),
   _CategoryItem(category: 'Nuts', tag: 'nuts', asset: 'images/food05.jpeg'),
