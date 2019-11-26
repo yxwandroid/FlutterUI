@@ -15,10 +15,10 @@ class MyPainter extends CustomPainter {
     //绘制直线
 //    canvas.drawLine(Offset(20.0, 20.0), Offset(120.0, 20.0), _paint);
 //绘制点
-//    canvas.drawPoints(
-//        PointMode.lines,
-//        [Offset(200, 200), Offset(250, 250), Offset(50, 200), Offset(100, 250)],
-//        _paint);
+    canvas.drawPoints(
+        PointMode.points,
+        [Offset(200, 200), Offset(250, 250), Offset(50, 200), Offset(100, 250)],
+        _paint);
 
 //    //绘制圆 参数(圆心，半径，画笔)
 //    canvas.drawCircle(
@@ -44,34 +44,34 @@ class MyPainter extends CustomPainter {
 //    path.arcTo(rect, 0.0, 3.14, false);
 //    canvas.drawPath(path, _paint);
 
-    Path path = new Path()..moveTo(0.0, 0.0);
-    var width = 200;
-    var height = 300;
-    path.moveTo(width / 2, height / 4);
-    path.cubicTo((width * 6) / 7, height / 9, (width * 13) / 13,
-        (height * 2) / 5, width / 2, (height * 7) / 12);
-    canvas.drawPath(path, _paint);
-
-    Path path2 = new Path();
-    path2.moveTo(width / 2, height / 4);
-    path2.cubicTo(width / 7, height / 9, width / 21, (height * 2) / 5,
-        width / 2, (height * 7) / 12);
-    canvas.drawPath(path2, _paint);
-
-    canvas.drawPath(
-        path,
-        _paint
-          ..style = PaintingStyle.fill
-          ..color = Colors.red);
-    canvas.drawPath(
-        path2,
-        _paint
-          ..style = PaintingStyle.fill
-          ..color = Colors.red);
+//    Path path = new Path();
+//    var width = 100;
+//    var height = 150;
+//    path.moveTo(width / 2, height / 4);
+//    path.cubicTo((width * 6) / 7, height / 9, (width * 13) / 13,
+//        (height * 2) / 5, width / 2, (height * 7) / 12);
+////    canvas.drawPath(path, _paint);
+//
+//    Path path2 = new Path();
+//    path2.moveTo(width / 2, height / 4);
+//    path2.cubicTo(width / 7, height / 9, width / 21, (height * 2) / 5,
+//        width / 2, (height * 7) / 12);
+////    canvas.drawPath(path2, _paint);
+//
+//    canvas.drawPath(
+//        path,
+//        _paint
+//          ..style = PaintingStyle.fill
+//          ..color = Colors.red);
+//    canvas.drawPath(
+//        path2,
+//        _paint
+//          ..style = PaintingStyle.fill
+//          ..color = Colors.red);
   }
 
   @override
   bool shouldRepaint(CustomPainter oldDelegate) {
-    return null;
+    return false;
   }
 }
