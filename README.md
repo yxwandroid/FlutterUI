@@ -1,3 +1,13 @@
+[TOC]
+
+
+解决不能在最新版本的android 和ios不能运行的问题 
+
+
+#本项目参考作者
+https://www.jianshu.com/p/ddb484789883
+https://gitee.com/yumi0629/FlutterUI/tree/master
+
 # flutter_ui
 
 For help building amazing UI with Flutter.
@@ -91,3 +101,4 @@ code：https://github.com/yumi0629/FlutterUI/tree/master/lib/sharedelement
 教程：[Flutter：Slivers大家族，让滑动视图的组合变得很简单！](https://www.jianshu.com/p/690ddade5d94)
 
 code：https://github.com/yumi0629/FlutterUI/tree/master/lib/sliver
+
