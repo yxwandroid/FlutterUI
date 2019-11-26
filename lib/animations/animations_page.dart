@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui/animations/animations_page1.dart';
 import 'package:flutter_ui/animations/stagger_page.dart';
+import 'package:flutter_ui/animations/transform_page.dart';
 
 class AnimationsPage extends StatefulWidget {
   @override
@@ -39,6 +40,11 @@ class _AnimationsPageState extends State<AnimationsPage> {
                   child: Text("组合动画"),
                   onPressed: () {
                     Navigator.push(context,  MaterialPageRoute(builder: (context) => StaggerPage()));
+                  },
+                ),  FlatButton(
+                  child: Text("transfrom 使用"),
+                  onPressed: () {
+                    Navigator.push(context,  MaterialPageRoute(builder: (context) => TransfromPage()));
                   },
                 ),
               ],

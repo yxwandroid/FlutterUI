@@ -28,7 +28,7 @@ class CircleFloatingMenu extends StatefulWidget {
     @required this.subMenus,
     this.startAngle = 180 * (pi / 180.0),
     this.endAngle = 270 * (pi / 180.0),
-    this.duration = const Duration(milliseconds: 400),
+    this.duration = const Duration(milliseconds: 500),
     this.menuToggled,
     this.menuSelected,
   }) : super(key: key);
@@ -39,7 +39,7 @@ class CircleFloatingMenu extends StatefulWidget {
 
 class CircleFloatingState extends State<CircleFloatingMenu>
     with TickerProviderStateMixin {
-  final double translateLength = 100.0;
+  final double translateLength = 80.0;
   MenuState _menuState = MenuState.CLOSE;
   AnimationController _controller;
   Map<String, Animation<double>> animations;
@@ -52,6 +52,7 @@ class CircleFloatingState extends State<CircleFloatingMenu>
             setState(() {});
           });
     _initAnimations();
+
     super.initState();
   }
 
@@ -59,10 +60,11 @@ class CircleFloatingState extends State<CircleFloatingMenu>
   Widget build(BuildContext context) {
     List<Widget> widgets = [];
     for (int i = 0; i < widget.subMenus.length; i++) {
+//      print(i.toString()+"  -----"+_getOffset(i).toString());
       Widget sub = Transform.scale(
         scale: animations["scale"].value,
         child: Transform.translate(
-          offset: _getOffset(i),
+          offset:_generateTranslateOffsetAnimation(_getOffset(i)).value,
           child: Transform.rotate(
             angle: degToRad(animations["rotate"].value * 360.0),
             child: GestureDetector(
@@ -109,7 +111,6 @@ class CircleFloatingState extends State<CircleFloatingMenu>
     animations = {
       'scale': _generateScaleAnimation(),
       'rotate': _generateRotateAnimation(),
-      'translate': _generateTranslateAnimation(),
     };
   }
 
@@ -126,11 +127,7 @@ class CircleFloatingState extends State<CircleFloatingMenu>
     return new Tween<double>(begin: 0.0, end: 1.0).animate(
       new CurvedAnimation(
         parent: _controller,
-        curve: new Interval(
-          0.0,
-          1.0,
-          curve: Curves.ease,
-        ),
+        curve: Curves.ease,
       ),
     );
   }
@@ -148,15 +145,13 @@ class CircleFloatingState extends State<CircleFloatingMenu>
     );
   }
 
-  Animation<double> _generateTranslateAnimation() {
-    return new Tween<double>(begin: 0.0, end: 1.0).animate(
+
+
+  Animation<Offset> _generateTranslateOffsetAnimation(Offset offsetEnd) {
+    return new Tween<Offset>(begin: Offset(0,0), end:offsetEnd).animate(
       new CurvedAnimation(
         parent: _controller,
-        curve: new Interval(
-          0.0,
-          1.0,
-          curve: Curves.ease,
-        ),
+        curve: Curves.elasticInOut,
       ),
     );
   }

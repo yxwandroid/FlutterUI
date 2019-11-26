@@ -26,20 +26,20 @@ class _AnimationsPage1State extends State<AnimationsPage1>
 
 
 
-    final CurvedAnimation curve = CurvedAnimation(
-        parent: controller, curve: Curves.easeInCirc);
-    animation = Tween(begin: 50.0, end: 200.0).animate(curve)
-      ..addListener(() {
-        setState(() {});
-      })
-      ..addStatusListener((status) {
+//    final CurvedAnimation curve = CurvedAnimation(
+//        parent: controller, curve: Curves.easeInCirc);
+//    animation = Tween(begin: 50.0, end: 200.0).animate(curve)
+//      ..addListener(() {
+//        setState(() {});
+//      })
+//      ..addStatusListener((status) {
         //添加监听
 //                        if (status == AnimationStatus.completed) {
 //                          controller.reverse();
 //                        } else if (status == AnimationStatus.dismissed) {
 //                          controller.forward();
 //                        }
-      });
+//      });
     controller.forward();
   }
 
@@ -64,40 +64,12 @@ class _AnimationsPage1State extends State<AnimationsPage1>
                 FlatButton(
                   child: Text("线性动画"),
                   onPressed: () {
-                    // 通过 Tween 对象 创建 Animation 对象
-                    animation =
-                        Tween(begin: 50.0, end: 200.0).animate(controller)
-                          ..addListener(() {
-                            // 注意：这句不能少，否则 widget 不会重绘，也就看不到动画效果
-                            setState(() {});
-                          });
-
-//                    controller.reset();
-                    // 执行动画
-                    controller.forward();
                   },
                 ),
                 FlatButton(
                   child: Text("非线性动画"),
                   onPressed: () {
-                    // 非线性动画
-                    final CurvedAnimation curve = CurvedAnimation(
-                        parent: controller, curve: Curves.easeInCirc);
-                    animation = Tween(begin: 50.0, end: 200.0).animate(curve)
-                      ..addListener(() {
-                        setState(() {});
-                      })
-                      ..addStatusListener((status) {
-                        //添加监听
-//                        if (status == AnimationStatus.completed) {
-//                          controller.reverse();
-//                        } else if (status == AnimationStatus.dismissed) {
-//                          controller.forward();
-//                        }
-                      });
-//                    controller.reset();
-                    // 执行动画
-                    controller.forward();
+
                   },
                 ),
               ],
