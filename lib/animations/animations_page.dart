@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui/animations/animations_page1.dart';
+import 'package:flutter_ui/animations/canvas/canvas_page.dart';
 import 'package:flutter_ui/animations/stagger_page.dart';
 import 'package:flutter_ui/animations/transform_page.dart';
 
@@ -23,7 +24,8 @@ class _AnimationsPageState extends State<AnimationsPage> {
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.add),
           onPressed: () {
-            Navigator.push(context,  MaterialPageRoute(builder: (context) => StaggerPage()));
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => StaggerPage()));
           },
         ),
         body: Stack(
@@ -33,23 +35,39 @@ class _AnimationsPageState extends State<AnimationsPage> {
                 FlatButton(
                   child: Text("线性动画 和 非线性动画"),
                   onPressed: () {
-                    Navigator.push(context,  MaterialPageRoute(builder: (context) => AnimationsPage1()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => AnimationsPage1()));
                   },
                 ),
                 FlatButton(
                   child: Text("组合动画"),
                   onPressed: () {
-                    Navigator.push(context,  MaterialPageRoute(builder: (context) => StaggerPage()));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => StaggerPage()));
                   },
-                ),  FlatButton(
+                ),
+                FlatButton(
                   child: Text("transfrom 使用"),
                   onPressed: () {
-                    Navigator.push(context,  MaterialPageRoute(builder: (context) => TransfromPage()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => TransfromPage()));
+                  },
+                ),
+                FlatButton(
+                  child: Text("canvas  使用"),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => CanvasPage()));
                   },
                 ),
               ],
             ),
-
           ],
         ));
   }
